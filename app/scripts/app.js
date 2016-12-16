@@ -59,7 +59,7 @@ angular
   }]).directive('woshi',function(){
   	return {
   		restrict:'ACEM',
-  	    template:'<div style="padding:30px; border-bottom:1px solid #ccc"><h3>{{date2}}</h3><div ng-repeat="a in date">{{$index+1}}  {{a.title | f}}</div><div ng-repeat="c in date3"><img ng-src="{{c.img}}"></div></div>',
+  	    template:'<div style="padding:30px; border-bottom:1px solid #ccc"><h3>{{date2}}</h3><div ng-repeat="a in date">{{$index+1}}  {{a.title | f}}</div><div><img ng-repeat="c in date3" ng-src="{{c.img}}" style="width:100px;height:100px;padding:5px 10px;"></div></div>',
   	    replace:true,
   	    scope:{date:'=wang',date2:'@wang2',date3:'=wang3'},
   	    link:function(scope,element,attrs){
@@ -72,7 +72,7 @@ angular
   		if(e.length>15){
   			return e.slice(0,15)+'...'
   		}else{
-  		return e
+  		    return e
   		}
   	}
   }])
